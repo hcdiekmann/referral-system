@@ -4,12 +4,12 @@
   <head>
     <meta charset="UTF-8" />
     <title>NZ Healthcare | Referral System</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
   </head>
   <body>
     <div class="header">
       <img
-        src="media/logo0.png"
+        src="{% static 'pictures/logo0.png' %}"
         alt="NZ Healthcare Logo"
         width="150px"
         height="150px"
@@ -23,7 +23,9 @@
         <a href="{% url 'referral_list' %}">REFERRALS</a>
       </div>
       <div class="nav-buttons">
-        <button onclick="location.href='admin'">Admin Dashboard</button>
+        <a href="{% url 'admin:index' %}">
+          <button>Admin Dashboard</button>
+        </a>
       </div>
     </div>
     <div class="container">{% block content %} {% endblock %}</div>
