@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+<h2>People</h2>
+<a href="{% url 'person_new' %}">Add New Person</a>
+<ul>
+  {% for person in object_list %}
+  <li>
+    <a href="{% url 'person_detail' person.id %}"
+      >{{ person.first_name }} {{ person.last_name }}</a
+    >
+    - {{ person.date_of_birth }}
+  </li>
+  {% empty %}
+  <li>No people found.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

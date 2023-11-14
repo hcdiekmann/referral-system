@@ -1,0 +1,8 @@
+{% extends 'base.html' %} {% block content %}
+<h2>Person Detail</h2>
+<p>Name: {{ object.first_name }} {{ object.last_name }}</p>
+<p>Phone Number: {{ object.phone_number }}</p>
+<p>Date of Birth: {{ object.date_of_birth }}</p>
+<a href="{% url 'person_edit' object.id %}">Edit</a> |
+<a href="{% url 'person_delete' object.id %}">Delete</a>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block content %}
+<h2>Referral Detail</h2>
+<p>Referral Date: {{ object.referral_date }}</p>
+<p>Referrer: {{ object.referrer_name }}</p>
+<p>Referral Reason: {{ object.referral_reason }}</p>
+<p>Note: {{ object.note }}</p>
+<a href="{% url 'referral_edit' object.id %}">Edit</a> |
+<a href="{% url 'referral_delete' object.id %}">Delete</a>
+{% endblock %}
