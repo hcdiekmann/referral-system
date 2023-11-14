@@ -1,11 +1,12 @@
 from django.urls import path
 from django.conf.urls.static import static
 from core_project.settings import DEBUG, MEDIA_URL, MEDIA_ROOT
+from .views import HomeView
 from .person_views import PersonListView, PersonDetailView, PersonCreateView, PersonUpdateView, PersonDeleteView
 from .referral_views import ReferralListView, ReferralDetailView, ReferralCreateView, ReferralUpdateView, ReferralDeleteView
 
 urlpatterns = [
-    path('', PersonListView.as_view(), name='person_list'),
+    path('', HomeView.as_view(), name='home'),
     path('people/', PersonListView.as_view(), name='person_list'),
     path('people/<int:pk>/', PersonDetailView.as_view(), name='person_detail'),
     path('people/new/', PersonCreateView.as_view(), name='person_new'),
