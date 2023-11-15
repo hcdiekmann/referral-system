@@ -100,11 +100,11 @@ h2 {
   margin: 1rem 0;
 }
 
-.search-form {
+.div-form {
   margin: 1rem 0;
 }
 
-.search-form input[type='text'] {
+.div-form input[type='text'] {
   padding: 0.5rem;
   font-size: 0.8rem;
   border: 1px solid #ddd;
@@ -113,7 +113,7 @@ h2 {
   max-width: 300px;
 }
 
-.search-form button {
+.div-form button {
   padding: 0.5rem 1rem;
   margin-left: 0.5rem;
   background-color: #00796b;
