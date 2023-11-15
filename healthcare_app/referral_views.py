@@ -1,7 +1,7 @@
 
 from django.views.generic import CreateView, UpdateView, DetailView, DeleteView, ListView
 from django.urls import reverse_lazy
-from .models import Referral
+from .models import Person, Referral
 from .forms import ReferralForm
 
 
@@ -21,6 +21,8 @@ class ReferralCreateView(CreateView):
     template_name = 'referral_form.html'
 
     def form_valid(self, form):
+        person_id = self.kwargs.get('person_id')
+        form.instance.person = Person.objects.get(pk=person_id)
         form.instance.user = self.request.user
         return super().form_valid(form)
     
@@ -50,6 +52,3 @@ class ReferralDeleteView(DeleteView):
     model = Referral
     template_name = 'referral_confirm_delete.html'
     success_url = reverse_lazy('referral_list')
-
-    def delete(self, request, *args, **kwargs):
-        return super().delete(request, *args, **kwargs)

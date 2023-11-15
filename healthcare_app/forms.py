@@ -25,4 +25,5 @@ class ReferralForm(forms.ModelForm):
             'referrer_name': forms.TextInput(attrs={'class': 'form-control'}),
             'referral_reason': forms.Textarea(attrs={'class': 'form-control'}),
             'note': forms.Textarea(attrs={'class': 'form-control'}),
+            'document': forms.FileInput(attrs={'class': 'form-control'}),
         }

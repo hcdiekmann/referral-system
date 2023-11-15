@@ -14,7 +14,7 @@ urlpatterns = [
     path('people/<int:pk>/delete/', PersonDeleteView.as_view(), name='person_delete'),
     path('referral/', ReferralListView.as_view(), name='referral_list'),
     path('referral/<int:pk>/', ReferralDetailView.as_view(), name='referral_detail'),
-    path('referral/new/', ReferralCreateView.as_view(), name='referral_new'),
+    path('referral/new/<int:person_id>/', ReferralCreateView.as_view(), name='referral_new'),
     path('referral/<int:pk>/edit/', ReferralUpdateView.as_view(), name='referral_edit'),
     path('referral/<int:pk>/delete/', ReferralDeleteView.as_view(), name='referral_delete'),
     

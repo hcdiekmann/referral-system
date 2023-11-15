@@ -20,4 +20,4 @@ class Referral(models.Model):
     document = models.FileField(upload_to='referral_documents/', null=True, blank=True)
 
     def __str__(self):
-        return f"Referral for {self.person.first_name} {self.person.last_name} on {self.referral_date}"
+        return f"{self.person.first_name} {self.person.last_name} on {self.referral_date}"

@@ -3,8 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Local development settings
 env/
+media/
 
 # Django generated files
 *.log

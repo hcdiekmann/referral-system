@@ -3,6 +3,8 @@
 <form method="post">
   {% csrf_token %}
   <button type="submit">Confirm</button>
-  <a href="{% url 'ref' %}">Back</a>
+  <button>
+    <a href="{% url 'referral_detail' referral.id  %}">Cancel</a>
+  </button>
 </form>
 {% endblock %}
