@@ -113,6 +113,10 @@ h2 {
   max-width: 300px;
 }
 
+.div-form button a {
+  text-decoration: none;
+  color: white;
+}
 .div-form button {
   padding: 0.5rem 1rem;
   margin-left: 0.5rem;
@@ -124,7 +128,7 @@ h2 {
   font-weight: bold;
 }
 
-.search-form button:hover {
+.div-form button:hover {
   background-color: #005b4f;
 }
 
