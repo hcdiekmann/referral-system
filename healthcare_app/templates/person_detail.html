@@ -11,9 +11,9 @@
     <a href="{% url 'referral_new' object.id %}">New Referral</a>
   </div>
 </div>
-    <p>Phone Number: {{ object.phone_number }}</p>
-    <p>Date of Birth: {{ object.date_of_birth }}</p>
-    <p>Referrals: {{ object.referrals.count }}</p>
+    <p><strong>Phone Number:</strong> {{ object.phone_number }}</p>
+    <p><strong>Date of Birth:</strong> {{ object.date_of_birth }}</p>
+    <p><strong>Referrals:</strong> {{ object.referrals.count }}</p>
     {% if object.referrals.count > 0 %}
     <ul>
       {% for referral in object.referrals.all %}
