@@ -1,5 +1,6 @@
 from django.views.generic import CreateView, UpdateView, DetailView, DeleteView, ListView
 from django.urls import reverse_lazy
+from django.db.models import Q
 from .models import Person
 from .forms import PersonForm
 
@@ -8,6 +9,22 @@ class PersonListView(ListView):
     model = Person
     template_name = 'person_list.html'
     paginate_by = 10
+    
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        search_query = self.request.GET.get('q', '')
+        if search_query:
+            queryset = queryset.filter(
+                Q(first_name__icontains=search_query) | 
+                Q(last_name__icontains=search_query)
+            )
+        return queryset
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        num_persons = Person.objects.count()  # Get total count of persons
+        context['num_persons'] = num_persons
+        return context
 
 class PersonDetailView(DetailView):
     model = Person

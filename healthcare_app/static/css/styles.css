@@ -85,7 +85,7 @@ h2 {
 }
 
 .container-button {
-  padding: 0 0.5rem 0 0;
+  padding-right: 0.5rem;
 }
 
 .container-button :hover {
@@ -97,6 +97,35 @@ h2 {
 .btn-row {
   display: flex;
   padding: 0.5rem 0;
+  margin: 1rem 0;
+}
+
+.search-form {
+  margin: 1rem 0;
+}
+
+.search-form input[type='text'] {
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  width: 50%;
+  max-width: 300px;
+}
+
+.search-form button {
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.search-form button:hover {
+  background-color: #005b4f;
 }
 
 ul {
