@@ -7,7 +7,7 @@ from .forms import PersonForm
 class PersonListView(ListView):
     model = Person
     template_name = 'person_list.html'
-
+    paginate_by = 10
 
 class PersonDetailView(DetailView):
     model = Person
