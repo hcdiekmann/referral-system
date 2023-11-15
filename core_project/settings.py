@@ -51,6 +51,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'core_project.urls'
+LOGIN = 'login'
+LOGIN_REDIRECT_URL = 'person_list'
+LOGOUT_REDIRECT_URL = 'home'
 
 TEMPLATES = [
     {

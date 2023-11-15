@@ -1,21 +1,22 @@
 
 from django.views.generic import CreateView, UpdateView, DetailView, DeleteView, ListView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from .models import Person, Referral
 from .forms import ReferralForm
 
 
-class ReferralListView(ListView):
+class ReferralListView(LoginRequiredMixin, ListView):
     model = Referral
     template_name = 'referral_list.html'
 
 
-class ReferralDetailView(DetailView):
+class ReferralDetailView(LoginRequiredMixin, DetailView):
     model = Referral
     template_name = 'referral_detail.html'
 
 
-class ReferralCreateView(CreateView):
+class ReferralCreateView(LoginRequiredMixin, CreateView):
     model = Referral
     form_class = ReferralForm
     template_name = 'referral_form.html'
@@ -35,7 +36,7 @@ class ReferralCreateView(CreateView):
         return reverse_lazy('referral_detail', kwargs={'pk': self.object.pk})
 
 
-class ReferralUpdateView(UpdateView):
+class ReferralUpdateView(LoginRequiredMixin, UpdateView):
     model = Referral
     form_class = ReferralForm
     template_name = 'referral_form.html'
@@ -48,7 +49,7 @@ class ReferralUpdateView(UpdateView):
         return reverse_lazy('referral_detail', kwargs={'pk': self.object.pk})
  
     
-class ReferralDeleteView(DeleteView):
+class ReferralDeleteView(LoginRequiredMixin, DeleteView):
     model = Referral
     template_name = 'referral_confirm_delete.html'
     success_url = reverse_lazy('referral_list')

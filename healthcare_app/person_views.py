@@ -1,11 +1,13 @@
 from django.views.generic import CreateView, UpdateView, DetailView, DeleteView, ListView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.db.models import Q
 from .models import Person
 from .forms import PersonForm
 
 
-class PersonListView(ListView):
+
+class PersonListView(LoginRequiredMixin, ListView):
     model = Person
     template_name = 'person_list.html'
     paginate_by = 10
@@ -26,12 +28,12 @@ class PersonListView(ListView):
         context['num_persons'] = num_persons
         return context
 
-class PersonDetailView(DetailView):
+class PersonDetailView(LoginRequiredMixin, DetailView):
     model = Person
     template_name = 'person_detail.html'
 
 
-class PersonCreateView(CreateView):
+class PersonCreateView(LoginRequiredMixin, CreateView):
     model = Person
     form_class = PersonForm
     template_name = 'person_form.html'
@@ -47,7 +49,7 @@ class PersonCreateView(CreateView):
         return context
 
 
-class PersonUpdateView(UpdateView):
+class PersonUpdateView(LoginRequiredMixin, UpdateView):
     model = Person
     fields = ['first_name', 'last_name', 'phone_number', 'date_of_birth']
     template_name = 'person_form.html'  # same form for create and update
@@ -56,7 +58,7 @@ class PersonUpdateView(UpdateView):
         return reverse_lazy('person_detail', kwargs={'pk': self.object.pk})
 
 
-class PersonDeleteView(DeleteView):
+class PersonDeleteView(LoginRequiredMixin, DeleteView):
     model = Person
     success_url = reverse_lazy('person_list')
     template_name = 'person_confirm_delete.html'

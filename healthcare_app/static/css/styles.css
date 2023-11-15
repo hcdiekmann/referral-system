@@ -76,7 +76,7 @@ h2 {
 }
 
 .container-button a {
-  border: #005b4f 1px solid;
+  border: #005b4f 2px solid;
   color: #005b4f;
   padding: 0.75em 1.5em;
   border-radius: 0.5rem;
@@ -104,6 +104,7 @@ h2 {
   margin: 1rem 0;
 }
 
+.div-form input[type='password'],
 .div-form input[type='text'] {
   padding: 0.5rem;
   font-size: 0.8rem;
@@ -111,6 +112,12 @@ h2 {
   border-radius: 0.5rem;
   width: 50%;
   max-width: 300px;
+}
+
+.div-form input[type='password']:focus,
+.div-form input[type='text']:focus {
+  outline: none;
+  border-color: #00796b;
 }
 
 .div-form button a {
