@@ -1,19 +1,28 @@
 {% extends 'base.html' %} {% block content %}
 <h2>{{ object.first_name }} {{ object.last_name }}</h2>
-<a href="{% url 'person_edit' object.id %}">Edit</a> |
-<a href="{% url 'person_delete' object.id %}">Delete</a> |
-<a href="{% url 'referral_new' object.id %}">New Referral</a>
-<p>Phone Number: {{ object.phone_number }}</p>
-<p>Date of Birth: {{ object.date_of_birth }}</p>
-<p>Referrals: {{ object.referrals.count }}</p>
-{% if object.referrals.count > 0 %}
-<ul>
-  {% for referral in object.referrals.all %}
-  <li>
-    <a href="{% url 'referral_detail' referral.id %}"
-      >{{ referral.referral_date }} by {{referral.referrer_name}}
-    </a>
-  </li>
-  {% endfor %}
-</ul>
-{% endif %} {% endblock %}
+<div class='btn-row'>
+  <div class="container-button">
+    <a href="{% url 'person_edit' object.id %}">Edit</a>
+  </div>
+  <div class="container-button">
+    <a href="{% url 'person_delete' object.id %}">Delete</a>
+  </div>
+  <div class="container-button">
+    <a href="{% url 'referral_new' object.id %}">New Referral</a>
+  </div>
+</div>
+    <p>Phone Number: {{ object.phone_number }}</p>
+    <p>Date of Birth: {{ object.date_of_birth }}</p>
+    <p>Referrals: {{ object.referrals.count }}</p>
+    {% if object.referrals.count > 0 %}
+    <ul>
+      {% for referral in object.referrals.all %}
+      <li>
+        <a href="{% url 'referral_detail' referral.id %}"
+          >{{ referral.referral_date }} by {{referral.referrer_name}}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endblock %}
+  </div>

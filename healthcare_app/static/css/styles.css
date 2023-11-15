@@ -18,6 +18,10 @@ body {
   font-size: 3em;
 }
 
+h2 {
+  font-size: 2.5em;
+}
+
 .nav {
   background-color: #e8f5e9;
   text-align: center;
@@ -33,7 +37,6 @@ body {
   color: white;
   border: none;
   padding: 0.8rem 1.6rem;
-
   cursor: pointer;
   border-radius: 0.5rem;
   font-weight: bold;
@@ -48,14 +51,9 @@ body {
   margin: 0 15px;
   color: #0c0f0e;
   text-decoration: none;
-  font-weight: bold;
 }
 
 .nav a:hover {
-  color: #00796b;
-}
-
-.nav a.active {
   color: #00796b;
 }
 
@@ -68,6 +66,59 @@ body {
 .container {
   margin: 2rem 5rem;
 }
+
+.person-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container-button a {
+  border: #005b4f 1px solid;
+  color: #005b4f;
+  padding: 0.75em 1.5em;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.container-button {
+  padding: 0 0.5rem 0 0;
+}
+
+.container-button :hover {
+  background-color: #005b4f;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-row {
+  display: flex;
+  padding: 0.5rem 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+ul li a {
+  text-decoration: none; /* Remove default hyperlink styling */
+  color: #333; /* Text color */
+  font-family: Arial, sans-serif; /* Use arial as the main font */
+  font-size: 1.2rem; /* Increase font-size slightly */
+}
+
 .footer {
   background-color: #0c0f0e;
   color: white;
