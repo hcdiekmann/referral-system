@@ -11,7 +11,7 @@ class PersonForm(forms.ModelForm):
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
             'phone_number': forms.TextInput(attrs={'class': 'form-control'}),
-            'date_of_birth': forms.DateInput(attrs={'class': 'form-control'}, format='%Y-%m-%d'),
+            'date_of_birth': forms.DateInput(attrs={'class': 'form-control','type': 'date'}, format='%d/%m/%Y'),
         }
 
 
@@ -21,7 +21,7 @@ class ReferralForm(forms.ModelForm):
         fields = ['referral_date', 'referrer_name', 'referral_reason', 'note', 'document']
         
         widgets = {
-            'referral_date': forms.DateInput(attrs={'class': 'form-control'}),
+            'referral_date': forms.DateInput(attrs={'class': 'form-control','type': 'date'}, format='%d/%m/%Y'),
             'referrer_name': forms.TextInput(attrs={'class': 'form-control'}),
             'referral_reason': forms.Textarea(attrs={'class': 'form-control'}),
             'note': forms.Textarea(attrs={'class': 'form-control'}),
