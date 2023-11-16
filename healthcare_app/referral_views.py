@@ -9,6 +9,7 @@ from .forms import ReferralForm
 class ReferralListView(LoginRequiredMixin, ListView):
     model = Referral
     template_name = 'referral_list.html'
+    paginate_by = 10
 
 
 class ReferralDetailView(LoginRequiredMixin, DetailView):
