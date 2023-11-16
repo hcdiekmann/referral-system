@@ -2,8 +2,10 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
   background-color: #f4f4f4;
 }
+
 .header {
   background-color: #0c0f0e;
   color: white;
@@ -11,7 +13,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 0;
+  padding: 0.5rem;
 }
 
 .header h1 {
@@ -32,7 +34,23 @@ h2 {
   align-items: center;
 }
 
+.nav a {
+  margin: 0 1em;
+  color: #0c0f0e;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: #00796b;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+}
+
 .nav-buttons button {
+  float: right;
   background-color: #00796b;
   color: white;
   border: none;
@@ -47,32 +65,16 @@ h2 {
   background-color: #005b4f;
 }
 
-.nav a {
-  margin: 0 15px;
-  color: #0c0f0e;
-  text-decoration: none;
-}
-
-.nav a:hover {
-  color: #00796b;
-}
-
-.nav-links {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.container {
-  margin: 2rem 5rem;
-}
-
 .person-card {
   background-color: white;
   border: 1px solid #ddd;
   padding: 1.5rem;
   margin: 1.5rem 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  padding: 0 2rem 2rem 2rem;
 }
 
 .container-button a {
@@ -86,6 +88,7 @@ h2 {
 
 .container-button {
   padding-right: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .container-button :hover {
@@ -96,8 +99,7 @@ h2 {
 
 .btn-row {
   display: flex;
-  padding: 0.5rem 0;
-  margin: 1rem 0;
+  flex-direction: row;
 }
 
 .div-form {
@@ -192,5 +194,68 @@ ul li a:hover {
   text-align: center;
   position: relative;
   bottom: 0;
-  width: 100%;
+}
+
+/* Styles for small devices */
+@media screen and (max-width: 767px) {
+  .nav-links {
+    flex-direction: column;
+  }
+  .nav-links a {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+  }
+  .btn-row {
+    flex-direction: column;
+  }
+  .container-button {
+    margin-bottom: 2rem;
+  }
+  .container {
+    padding: 0 1rem 1rem 1rem;
+  }
+}
+
+/* Styles for medium devices */
+@media screen and (min-width: 768px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+  }
+  .header,
+  .footer {
+    grid-column: 1 / span 3;
+  }
+  .nav {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+  }
+  .nav-links {
+    flex-direction: row;
+  }
+  .container {
+    grid-column: 2;
+  }
+}
+
+/* Styles for large devices */
+@media screen and (min-width: 1024px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+  .header,
+  .footer {
+    grid-column: 1 / span 3;
+  }
+  .nav {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+  }
+  .nav-links {
+    flex-direction: row;
+  }
+  .container {
+    grid-column: 2;
+  }
 }
